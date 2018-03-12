@@ -2,6 +2,38 @@
     text-align: center;
 }
 
-.btnHolder {
+.btnSection {
     border-right: 3px solid #e9ecef;
+}
+
+.gifThumb{
+    height: 150px;
+}
+
+.card {
+    max-width: 250px;
+    margin: 10%;
+    text-align: center;
+}
+.btn-group {
+    width: 80%;
+}
+
+.gifBtn{
+    min-width: 90%;
+    margin-top: 5%;
+    color: #e9ecef;
+    background-color: #117a8b;
+    border: 2px solid #e9ecef !important;
+    border-right: none !important;
+    box-shadow: 1px 2.5px 4px #117a8b;
+}
+
+.deleteBtn{
+    margin-top: 5%;
+    color: #e9ecef;
+    background-color: #117a8b;
+    border: 2px solid #e9ecef !important;
+    border-left: none !important;
+    box-shadow: 1px 2.5px 4px #117a8b;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>GIPHY Gallery</title>
     <script type="text/javascript" src="assets/javascript/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -13,51 +13,20 @@
     <div class="container-fluid">
         <div class="jumbotron">
             <h1 class="display-4">GIPHY GALLERY</h1>
+            <p class="lead" id="subTitle"></p>
         </div>
         <div class="row">
-            <div class="col col-sm-4 btnHolder">
+            <div class="col col-sm-4 btnSection">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="newBtn" placeholder="New Giphy Category" > <!-- aria-label="Add an Animal" aria-describedby="newBtnLabel" -->
+                    <input type="text" class="form-control" id="newBtnName" placeholder="New Giphy Category">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Add Button</button>
+                        <button class="btn btn-outline-secondary" id="newBtn" type="button">Add Button</button>
                     </div>
-                </div>              
+                </div>  
+                <div id="btnHolder">
+                </div>            
             </div>
-            <div class="col col-sm-8 gifHolder">
-                <div class="row">
-                    <div class="col col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/images/gif1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/images/gif1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/images/gif1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/images/gif1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col col-sm-8" id="gifHolder">
             </div>
         </div>
 
