@@ -9,22 +9,35 @@ $(document).ready(function(){
             if (self.btnArray.indexOf(btnName) === -1)
             {
                 self.btnArray.push(btnName);
+                self.slctdBtn = btnName;
                 self.show('btns');
                 self.saveToLocal();
+                self.callAPI(btnName);
             }
         },        
         callAPI: function(qVal)
         {
             var self = this,
                 url = `https://api.giphy.com/v1/gifs/search?api_key=32OZj5mWP3mgLVVuJfFvw3joHyIUS62T&limit=12&lang=en`;
-            
-            $.getJSON (`${url}&q=${qVal}`, function(e)
+                     
+            qVal = (qVal === '' && self.btnArray.length > 0 ) ? self.btnArray[0] : qVal;            
+
+            if (qVal != '')
             {
-                self.gifArray = e.data;
-                self.show('GIFs');
-                self.show('btns');
-                $('#subTitle').html(`Now Showing <b>${qVal.toUpperCase()}</b> GIFs `);
-            });
+                $.getJSON (`${url}&q=${qVal}`, function(e)
+                {
+                    self.gifArray = e.data;
+                    self.show('GIFs');
+                    self.show('btns');
+                    $('#subTitle').html(`Now Showing <b>${qVal.toUpperCase()}</b> GIFs`);
+                });
+            }
+            else
+            {
+                $('#subTitle').html(`Add a new button to display GIFs`);
+                $('#gifHolder').empty();
+            }
+            
         },
         getHTML: function(data, index, type)
         {
@@ -76,9 +89,12 @@ $(document).ready(function(){
                 {
                     self.btnArray.splice(index, 1);
                     self.show('btns');
-                    self.slctdBtn = (this.btnArray.indexOf(btnName) != -1) ? btnName : '';
+                    self.slctdBtn = (self.slctdBtn != btnName) ? self.slctdBtn :  
+                                    (self.btnArray.length > 0) ? self.btnArray[0] : '';
+                    self.callAPI(self.slctdBtn);
                     self.saveToLocal();
                 }
+
         },
         saveToLocal: function()
         {
@@ -133,7 +149,6 @@ $(document).ready(function(){
     
     $(document.body).on("click", ".gifBtn", function() 
     {
-        
         gifApp.gifBtnClick(this.innerHTML.trim());
     });
     
