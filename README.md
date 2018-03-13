@@ -1,8 +1,6 @@
 # GIPHY Gallery
 Week 6 Homework - Use this app to display the top 12 trending GIFs of any category you desire.
 
----
-
 ## Instructions
 
 1. Enter a category of GiF you'd like to query the GIPHY API for.
