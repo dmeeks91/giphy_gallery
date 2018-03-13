@@ -3,7 +3,7 @@ Week 6 Homework - Use this app to display the top 12 trending GIFs of any catego
 
 ## Instructions
 
-1. Enter a category of GiF you'd like to query the GIPHY API for.
+1. Enter a category of GIF you'd like to query the GIPHY API for.
 
 2. Click 'Add Button'
     * A new button will be created and the GIF gallery will be updated with the query results.
